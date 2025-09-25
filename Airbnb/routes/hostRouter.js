@@ -1,18 +1,18 @@
+const path=require('path');
+
 const express = require('express');
 const hostRouter= express.Router();
+const rootDir=require("../utils/Pathutil")
 
 
 hostRouter.get("/add-home",(req,res,next)=>{
-res.send(`
-  `);
+res.sendFile(path.join(rootDir,"views","addHome.html"));
 })
 
 hostRouter.post("/add-home",(req,res,next)=>{
-  console.log(req.body);
-res.send(`<h1>Your Home has been Registered</h1>
-  <a href="/">Go to home</a>
-  `);
-})
+  res.sendFile(path.join(rootDir,"views","homeAdded.html"));
+
+});
 
 
 module.exports=hostRouter;
