@@ -1,7 +1,5 @@
 const express =require('express');
 
-require
-
 const app = express();
 
 app.use((req,res,next)=>{
